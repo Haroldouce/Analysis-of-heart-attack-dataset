@@ -1,6 +1,6 @@
 heart_data <- read.csv("C:\\Users\\Harold goh\\Downloads\\heartAttack\\Medicaldataset.csv") #load data
 
-#PART A (Select two numerical data)
+#Select two numerical data
 age <- heart_data$Age 
 blood_pressure <- heart_data$Systolic.blood.pressure
 
@@ -92,7 +92,6 @@ library(gridExtra)
 grid.arrange(p1, p2, p3, p4, nrow = 2)
 grid.arrange(age_box_plot, age_hist, bp_box_plot, bp_hist, nrow=2)
 
-#Part B
 bp_68 <- sum(blood_pressure >= (bp_mean - bp_sd) & blood_pressure <= (bp_mean + bp_sd))
 bp_95 <- sum(blood_pressure >= (bp_mean - 2*bp_sd) & blood_pressure <= (bp_mean + 2*bp_sd))
 bp_997 <- sum(blood_pressure >= (bp_mean - 3*bp_sd) & blood_pressure <= (bp_mean + 3*bp_sd))
@@ -111,7 +110,6 @@ qqline(blood_pressure, col = "red")
 
 shapiro.test(blood_pressure)
 
-#Part C
 # Load ggplot2 package
 library(ggplot2)
 
